@@ -96,23 +96,23 @@
     opacity: 0;
   }
   .stage4 .avatar {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -90%);
     opacity: 1;
   }
 
   @keyframes avatar-bounce {
     0% {
-        transform: translate(-50%, -100%);
+        transform: translate(-50%, -90%);
     }
     50% {
         transform: translate(-50%, -95%);
     }
     100% {
-        transform: translate(-50%, -100%);
+        transform: translate(-50%, -90%);
     }
   }
   .stageEnd .avatar {
-    animation: avatar-bounce 4s infinite;
+    animation: avatar-bounce 3s infinite;
     animation-timing-function: linear;
   }
 </style>
@@ -134,10 +134,10 @@ module.exports = {
     initAnimation: function () {
       let vm = this
       setTimeout(function () { vm.stage1 = true }, 1000)
-      setTimeout(function () { vm.stage2 = true }, 2000)
-      setTimeout(function () { vm.stage3 = true }, 3000)
-      setTimeout(function () { vm.stage4 = true }, 4000)
-      setTimeout(function () { vm.stageEnd = true }, 6000)
+      setTimeout(function () { vm.stage2 = true }, 1500)
+      setTimeout(function () { vm.stage3 = true }, 2000)
+      setTimeout(function () { vm.stage4 = true }, 2000)
+      setTimeout(function () { vm.stageEnd = true }, 4000)
     }
   },
   mounted () {
