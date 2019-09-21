@@ -13,3 +13,8 @@ jobs:
       run: |
        npm install
        npm run build
+    - uses: actions/upload-artifact@v1
+    - with:
+      name: build-artifact
+      path: /dist
+      
