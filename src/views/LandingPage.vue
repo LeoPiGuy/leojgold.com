@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'loading-background': true, stage1: stage1, stage2: stage2, stage3: stage3, stage4: stage4}">
+  <div :class="{'loading-background': true, stage1: stage1, stage2: stage2, stage3: stage3, stage4: stage4, stageEnd: stageEnd}">
     <img class="avatar" src="../assets/myAvatar.svg"/>
     <div class="loading-module">
       <div class="name">
@@ -63,13 +63,13 @@
   }
 
   .l-letter {
-    transform: translate(400%)
+    transform: translate(400%, -100%)
   }
   .j-letter {
     transform: translate(200%)
   }
   .g-letter {
-    transform: translate(-150%)
+    transform: translate(-150%, 100%)
   }
 
   .letter {
@@ -99,6 +99,22 @@
     transform: translate(-50%, -100%);
     opacity: 1;
   }
+
+  @keyframes avatar-bounce {
+    0% {
+        transform: translate(-50%, -100%);
+    }
+    50% {
+        transform: translate(-50%, -95%);
+    }
+    100% {
+        transform: translate(-50%, -100%);
+    }
+  }
+  .stageEnd .avatar {
+    animation: avatar-bounce 4s infinite;
+    animation-timing-function: linear;
+  }
 </style>
 
 <script>
@@ -110,7 +126,8 @@ module.exports = {
       stage1: false,
       stage2: false,
       stage3: false,
-      stage4: false
+      stage4: false,
+      stageEnd: false
     }
   },
   methods: {
@@ -120,6 +137,7 @@ module.exports = {
       setTimeout(function () { vm.stage2 = true }, 2000)
       setTimeout(function () { vm.stage3 = true }, 3000)
       setTimeout(function () { vm.stage4 = true }, 4000)
+      setTimeout(function () { vm.stageEnd = true }, 6000)
     }
   },
   mounted () {
