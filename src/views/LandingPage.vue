@@ -12,10 +12,12 @@
         <h1 class="g-letter letter">G</h1><span class="appear">old</span>
       </div>
     </div>
+    <div class="selectors">
+    </div>
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
   .loading-background {
     background: black;
     width: 100%;
@@ -114,6 +116,17 @@
   .stageEnd .avatar {
     animation: avatar-bounce 3s infinite;
     animation-timing-function: linear;
+  }
+
+  .selectors p {
+    margin: 0;
+    color: whitesmoke;
+  }
+
+  .selectors {
+    display: inline-block;
+    position: relative;;
+    top: 30vw;
   }
 </style>
 
