@@ -23,7 +23,9 @@
   }
 
   .name {
-    padding-left: 2rem;
+    white-space:nowrap;
+    padding-left: 2vw;
+    background: transparent;
   }
 
   .name h1 {
@@ -31,12 +33,12 @@
     margin: 0px;
     color: beige;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 800%;
+    font-size: 9vw;
   }
   .name span {
     display: inline-block;
     color: grey;
-    font-size: 600%;
+    font-size: 6vw;
   }
   .appear {
     transition: opacity 2s, transform 2s;
@@ -56,7 +58,7 @@
     text-align: left;
     top: 50%;
     left: 50%;
-    width: auto;
+    overflow: visible;
     transform: translate(-50%, -50%)
   }
 
@@ -86,7 +88,7 @@
     position: fixed;
     width: 20%;
     display: fixed;
-    border: 10px solid grey;
+    border: thick solid grey;
     border-radius: 50%;
     top: 50%;
     left: 50%;
