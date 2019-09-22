@@ -23,7 +23,7 @@
 </style>
 
 <script>
-import MainFooter from './components/MainFooter.vue'
+import MainFooter from '@/components/MainFooter.vue'
 export default {
   components: {
     MainFooter
