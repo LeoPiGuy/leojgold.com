@@ -156,7 +156,6 @@
 <script>
 module.exports = {
   name: 'landing-page',
-  components: {},
   data: function () {
     return {
       stage1: false,

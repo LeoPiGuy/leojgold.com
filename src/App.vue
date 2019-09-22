@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <footer></footer>
+    <main-footer class="footer"></main-footer>
   </div>
 </template>
 
@@ -17,5 +17,16 @@
   position: absolute;
   bottom: 0px;
   top: 0px;
+  display: flex;
+  flex-direction: column;
 }
 </style>
+
+<script>
+import MainFooter from './components/MainFooter'
+export default {
+  components: {
+    MainFooter
+  }
+}
+</script>
