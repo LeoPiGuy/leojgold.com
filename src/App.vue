@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <main-footer class="footer"></main-footer>
+    <main-footer></main-footer>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
 </style>
 
 <script>
-import MainFooter from '@/components/MainFooter'
+import MainFooter from '@/components/MainFooter.vue'
 export default {
   components: {
     MainFooter
