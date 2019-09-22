@@ -1,133 +1,156 @@
 <template>
-  <div :class="{'loading-background': true, stage1: stage1, stage2: stage2, stage3: stage3, stage4: stage4, stageEnd: stageEnd}">
-    <img class="avatar" src="../assets/myAvatar.svg"/>
-    <div class="loading-module">
+  <div class="background">
+    <div class="w-full flex justify-center">
+      <img class="avatar" src="@/assets/myAvatar.svg"/>
+    </div>
+    <div class="loading-module flex justify-center pt-2">
       <div class="name">
-        <h1 class="l-letter letter">L</h1><span class="appear">eo</span>
+        <p class="capital">L</p>
+        <p class="lower">eo</p>
       </div>
       <div class="name">
-        <h1 class="j-letter letter">J</h1><span class="appear">acob</span>
+        <p class="capital">J</p>
+        <p class="lower">acob</p>
       </div>
       <div class="name">
-        <h1 class="g-letter letter">G</h1><span class="appear">old</span>
+        <p class="capital">G</p>
+        <p class="lower">old</p>
       </div>
     </div>
-    <div class="selectors">
+    <div class="choices">
+      <p class="caption">I present you with some options. Choose wisely.</p>
+      <div class="flex justify-center">
+        <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
+      </div>
+      <p class="text-gray-400 caption">or you can visit me at any of the sites listed below:</p>
+      <div class="flex justify-center">
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-  .loading-background {
-    background: black;
-    width: 100%;
-    height: 100%;
+<style lang="postcss" scoped>
+  .background {
+    @apply w-full h-full;
+    @apply flex flex-col justify-center;
+    background-color: #172d44;
   }
+
+  /* Avatar things */
+  .avatar {
+    @apply relative block;
+    @apply border-gray-200 border-8 rounded-full;
+    @apply w-1/2;
+    transition: opacity 1s, transform 2s;
+    /* margin-top: 10vh; */
+  }
+
+  @screen sm {
+    .avatar {
+      @apply w-1/3;
+    }
+  }
+
+  @screen md {
+    .avatar {
+      @apply w-1/4;
+    }
+  }
+
+  @screen lg {
+    .avatar {
+      @apply w-1/5;
+    }
+  }
+
+  @screen xl {
+    .avatar {
+      @apply w-1/6;
+    }
+  }
+
+  /* Name things */
 
   .name {
-    white-space:nowrap;
-    padding-left: 2vw;
-    background: transparent;
-  }
-
-  .name h1 {
-    display: inline-block;
-    margin: 0px;
-    color: beige;
+    @apply subpixel-antialiased tracking-wide whitespace-no-wrap pl-2;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 9vw;
   }
-  .name span {
-    display: inline-block;
-    color: grey;
-    font-size: 6vw;
-  }
-  .appear {
-    transition: opacity 2s, transform 2s;
-    opacity: 0;
-    transform: translate(10px,0);
+  .capital, .lower {
     display: inline-block;
   }
-  .stage2 .appear {
-    transform: translate(0,0);
-    opacity: 1;
+  .capital {
+    @apply text-5xl;
+    color: beige;
+  }
+  .lower {
+    @apply text-4xl;
+    @apply text-gray-400;
   }
 
-  .loading-module {
-    transition: transform 1s;
-    position: fixed;
-    display: flex;
-    text-align: left;
-    top: 50%;
-    left: 50%;
-    overflow: visible;
-    transform: translate(-50%, -50%)
-  }
-
-  .l-letter {
-    transform: translate(400%, -100%)
-  }
-  .j-letter {
-    transform: translate(200%)
-  }
-  .g-letter {
-    transform: translate(-150%, 100%)
-  }
-
-  .letter {
-    transition: transform 1s;
-  }
-
-  .stage1 .letter {
-    transform: translate(0)
-  }
-  .stage3 .loading-module {
-    transform: translate(-50%, 40%)
-  }
-
-  .avatar {
-    transition: opacity 1s, transform 2s;
-    position: fixed;
-    width: 20%;
-    display: fixed;
-    border: thick solid grey;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -120%);
-    opacity: 0;
-  }
-  .stage4 .avatar {
-    transform: translate(-50%, -90%);
-    opacity: 1;
-  }
-
-  @keyframes avatar-bounce {
-    0% {
-        transform: translate(-50%, -90%);
+  @screen md {
+    .capital{
+      @apply text-6xl;
     }
-    50% {
-        transform: translate(-50%, -95%);
-    }
-    100% {
-        transform: translate(-50%, -90%);
+    .lower {
+      @apply text-5xl;
     }
   }
-  .stageEnd .avatar {
-    animation: avatar-bounce 3s infinite;
-    animation-timing-function: linear;
+
+  @screen xl {
+    .capital{
+      font-size: 5.25rem;
+    }
+    .lower {
+      @apply text-6xl;
+    }
   }
 
-  .selectors p {
-    margin: 0;
-    color: whitesmoke;
+  /* Choice things */
+
+  .caption {
+    @apply text-gray-200;
+    font-family: 'Fjalla One', sans-serif;
   }
 
-  .selectors {
-    display: inline-block;
-    position: relative;;
-    top: 30vw;
+  @screen md {
+    .caption{
+      @apply text-sm;
+    }
   }
+
+  @screen xl {
+    .caption {
+      @apply text-2xl;
+    }
+  }
+  .continue-button {
+    @apply rounded-lg cursor-pointer py-1 px-2 m-4 text-2xl;
+    background: beige;
+    color: #172d44;
+    transition: all 0.4s;
+ }
+ .continue-button span {
+   @apply inline-block relative font-sans;
+   transition: all 0.4s;
+   transition-delay: padding 0.4s;
+ }
+ .continue-button span:after {
+    @apply absolute opacity-0 top-0;
+    content: '\00bb';
+    right: -20px;
+    transition: 0.5s;
+ }
+ .continue-button:hover {
+   @apply border;
+   background: #172d44;
+   color: beige;
+ }
+ .continue-button:hover span {
+   @apply pr-4;
+ }
+ .continue-button:hover span:after {
+    @apply opacity-100 right-0;
+ }
 </style>
 
 <script>
