@@ -23,7 +23,7 @@
 </style>
 
 <script>
-import MainFooter from './components/MainFooter'
+import MainFooter from '@/components/MainFooter'
 export default {
   components: {
     MainFooter
