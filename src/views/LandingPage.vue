@@ -24,6 +24,20 @@
       </div>
       <p class="text-gray-400 caption">or you can visit me at any of the sites listed below:</p>
       <div class="flex justify-center">
+        <div class="flex flex-wrap w-1/3">
+          <div class="social">
+            <a href="https://github.com/LeoPiGuy">@LeoPiGuy</a>
+          </div>
+          <div class="social">
+            bye
+          </div>
+          <div class="social">
+            yeet
+          </div>
+          <div class="social w-1/2">
+            yeet
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +54,7 @@
   .avatar {
     @apply relative block;
     @apply border-gray-200 border-8 rounded-full;
-    @apply w-1/2;
+    @apply w-1/2 h-auto;
     transition: opacity 1s, transform 2s;
     /* margin-top: 10vh; */
   }
@@ -151,6 +165,11 @@
  .continue-button:hover span:after {
     @apply opacity-100 right-0;
  }
+
+ /* Social media things */
+  .social {
+    @apply mt-4 bg-white w-1/2;
+  }
 </style>
 
 <script>
