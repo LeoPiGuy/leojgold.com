@@ -54,32 +54,37 @@
   .avatar {
     @apply relative block;
     @apply border-gray-200 border-8 rounded-full;
-    @apply w-1/2 h-auto;
+    @apply w-1/2;
     transition: opacity 1s, transform 2s;
+    height: 50vw;
     /* margin-top: 10vh; */
   }
 
   @screen sm {
     .avatar {
       @apply w-1/3;
+      height: 33.33333vw;
     }
   }
 
   @screen md {
     .avatar {
       @apply w-1/4;
+      height: 25vw;
     }
   }
 
   @screen lg {
     .avatar {
       @apply w-1/5;
+      height: 20vw;
     }
   }
 
   @screen xl {
     .avatar {
       @apply w-1/6;
+      height: 16.66666vw;
     }
   }
 
