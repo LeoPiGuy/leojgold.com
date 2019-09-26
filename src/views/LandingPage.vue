@@ -22,19 +22,19 @@
       <div class="flex justify-center">
         <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
       </div>
-      <p class="text-gray-400 caption">or you can visit me at any of the sites listed below:</p>
+      <p class="text-gray-400 caption">or you can visit / contact me at any of the sites listed below:</p>
       <div class="flex justify-center flex-wrap">
         <div class="social left">
-          <a href="https://github.com/LeoPiGuy"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
+          <a href="https://github.com/LeoPiGuy" target="_blank"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
         </div>
         <div class="social right">
-          bye
+          <a href="https://www.linkedin.com/in/leo-gold/" target="_blank"><font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon> Leo Gold</a>
         </div>
         <div class="social left">
-          yeet
+          <a><font-awesome-icon :icon="['fab','discord']"></font-awesome-icon> LeoPi#7784</a>
         </div>
         <div class="social right">
-          yeet
+          <a href="mailto:leopiguy@gmail.com" target="_blank"><font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon> leopiguy@gmail.com</a>
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@
 
  /* Social media things */
   .social {
-    @apply mt-4 text-4xl w-5/12 ml-2 mr-2;
+    @apply mt-4 text-4xl w-5/12;
     font-family: 'Caveat', cursive;
     color: beige;
     transition: color 0.5s, font-size 0.5s;
@@ -179,15 +179,14 @@
 
   .social:hover {
     @apply text-blue-500;
-    font-size: 2.3em;
   }
 
   .social.right {
-    @apply text-left;
+    @apply text-left ml-8;
   }
 
   .social.left {
-    @apply text-right;
+    @apply text-right mr-8;
   }
 
 </style>
