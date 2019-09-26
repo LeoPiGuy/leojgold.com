@@ -23,20 +23,18 @@
         <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
       </div>
       <p class="text-gray-400 caption">or you can visit me at any of the sites listed below:</p>
-      <div class="flex justify-center">
-        <div class="flex flex-wrap w-1/3">
-          <div class="social">
-            <a href="https://github.com/LeoPiGuy">@LeoPiGuy</a>
-          </div>
-          <div class="social">
-            bye
-          </div>
-          <div class="social">
-            yeet
-          </div>
-          <div class="social w-1/2">
-            yeet
-          </div>
+      <div class="flex justify-center flex-wrap">
+        <div class="social left">
+          <a href="https://github.com/LeoPiGuy"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
+        </div>
+        <div class="social right">
+          bye
+        </div>
+        <div class="social left">
+          yeet
+        </div>
+        <div class="social right">
+          yeet
         </div>
       </div>
     </div>
@@ -173,8 +171,25 @@
 
  /* Social media things */
   .social {
-    @apply mt-4 bg-white w-1/2;
+    @apply mt-4 text-4xl w-5/12 ml-2 mr-2;
+    font-family: 'Caveat', cursive;
+    color: beige;
+    transition: color 0.5s, font-size 0.5s;
   }
+
+  .social:hover {
+    @apply text-blue-500;
+    font-size: 2.3em;
+  }
+
+  .social.right {
+    @apply text-left;
+  }
+
+  .social.left {
+    @apply text-right;
+  }
+
 </style>
 
 <script>
