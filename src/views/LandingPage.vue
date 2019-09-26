@@ -171,7 +171,7 @@
 
  /* Social media things */
   .social {
-    @apply mt-4 text-4xl w-5/12;
+    @apply mt-2 text-base w-5/12 mx-2;
     font-family: 'Caveat', cursive;
     color: beige;
     transition: color 0.5s, font-size 0.5s;
@@ -182,11 +182,35 @@
   }
 
   .social.right {
-    @apply text-left ml-8;
+    @apply text-left;
   }
 
   .social.left {
-    @apply text-right mr-8;
+    @apply text-right;
+  }
+
+  @screen sm {
+    .social {
+      @apply text-lg;
+    }
+  }
+
+  @screen md {
+    .social {
+      @apply text-xl;
+    }
+  }
+
+  @screen lg {
+    .social {
+      @apply text-2xl
+    }
+  }
+
+  @screen xl {
+    .social {
+      @apply mt-4 mx-8 text-4xl;
+    }
   }
 
 </style>
