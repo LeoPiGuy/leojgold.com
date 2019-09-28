@@ -19,6 +19,7 @@
   top: 0px;
   display: flex;
   flex-direction: column;
+  background-color: #172d44;
 }
 </style>
 

@@ -1,8 +1,9 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
 </template>
+
+<style lang="postcss" scoped>
+
+</style>
 
 <script>
 // @ is an alias to /src

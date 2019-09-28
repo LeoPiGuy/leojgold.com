@@ -1,6 +1,6 @@
 <template>
-  <transition>
-    <div class="background">
+  <transition name="landing-page">
+    <div class="landing-container">
       <div class="w-full flex justify-center">
         <img class="avatar" src="@/assets/myAvatar.svg"/>
       </div>
@@ -21,7 +21,7 @@
       <div class="choices">
         <p class="caption c1">I present you with some options. Choose wisely.</p>
         <div class="flex justify-center">
-          <router-link class="continue-button" to="/"><span>Continue to My Website</span></router-link>
+          <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
         </div>
         <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
         <div class="flex justify-center flex-wrap">
@@ -47,10 +47,9 @@
 
   /* Pre-animation */
 
-  .background {
+  .landing-container {
     @apply w-full h-full;
     @apply flex flex-col justify-center;
-    background-color: #172d44;
   }
 
   /* Avatar things */
@@ -287,6 +286,16 @@
 
   .s2 {
     animation: appear 0.75s ease 3.5s forwards, reset-position 1s ease 3.5s forwards;
+  }
+
+  /* Landing page exit transition */
+
+  .landing-page-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .landing-page-leave-to {
+    opacity: 0;
   }
 </style>
 
