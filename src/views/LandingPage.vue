@@ -1,47 +1,52 @@
 <template>
-  <div class="background">
-    <div class="w-full flex justify-center">
-      <img class="avatar" src="@/assets/myAvatar.svg"/>
+  <transition>
+    <div class="background">
+      <div class="w-full flex justify-center">
+        <img class="avatar" src="@/assets/myAvatar.svg"/>
+      </div>
+      <div class="loading-module flex justify-center pt-2">
+        <div class="name">
+          <p class="capital l">L</p>
+          <p class="lower">eo</p>
+        </div>
+        <div class="name">
+          <p class="capital j">J</p>
+          <p class="lower">acob</p>
+        </div>
+        <div class="name">
+          <p class="capital g">G</p>
+          <p class="lower">old</p>
+        </div>
+      </div>
+      <div class="choices">
+        <p class="caption c1">I present you with some options. Choose wisely.</p>
+        <div class="flex justify-center">
+          <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
+        </div>
+        <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
+        <div class="flex justify-center flex-wrap">
+          <div class="social left s1">
+            <a href="https://github.com/LeoPiGuy" target="_blank"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
+          </div>
+          <div class="social right s1">
+            <a href="https://www.linkedin.com/in/leo-gold/" target="_blank"><font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon> Leo Gold</a>
+          </div>
+          <div class="social left s2">
+            <a><font-awesome-icon :icon="['fab','discord']"></font-awesome-icon> LeoPi#7784</a>
+          </div>
+          <div class="social right s2">
+            <a href="mailto:leopiguy@gmail.com" target="_blank"><font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon> leopiguy@gmail.com</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="loading-module flex justify-center pt-2">
-      <div class="name">
-        <p class="capital">L</p>
-        <p class="lower">eo</p>
-      </div>
-      <div class="name">
-        <p class="capital">J</p>
-        <p class="lower">acob</p>
-      </div>
-      <div class="name">
-        <p class="capital">G</p>
-        <p class="lower">old</p>
-      </div>
-    </div>
-    <div class="choices">
-      <p class="caption">I present you with some options. Choose wisely.</p>
-      <div class="flex justify-center">
-        <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
-      </div>
-      <p class="text-gray-400 caption">or you can visit / contact me at any of the sites listed below:</p>
-      <div class="flex justify-center flex-wrap">
-        <div class="social left">
-          <a href="https://github.com/LeoPiGuy" target="_blank"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
-        </div>
-        <div class="social right">
-          <a href="https://www.linkedin.com/in/leo-gold/" target="_blank"><font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon> Leo Gold</a>
-        </div>
-        <div class="social left">
-          <a><font-awesome-icon :icon="['fab','discord']"></font-awesome-icon> LeoPi#7784</a>
-        </div>
-        <div class="social right">
-          <a href="mailto:leopiguy@gmail.com" target="_blank"><font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon> leopiguy@gmail.com</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <style lang="postcss" scoped>
+
+  /* Pre-animation */
+
   .background {
     @apply w-full h-full;
     @apply flex flex-col justify-center;
@@ -53,7 +58,6 @@
     @apply relative block;
     @apply border-gray-200 border-8 rounded-full;
     @apply w-1/2;
-    transition: opacity 1s, transform 2s;
     height: 50vw;
     /* margin-top: 10vh; */
   }
@@ -145,31 +149,31 @@
     background: beige;
     color: #172d44;
     transition: all 0.4s;
- }
+  }
  .continue-button span {
    @apply inline-block relative font-sans;
    transition: all 0.4s;
    transition-delay: padding 0.4s;
- }
+  }
  .continue-button span:after {
     @apply absolute opacity-0 top-0;
     content: '\00bb';
     right: -20px;
     transition: 0.5s;
- }
+  }
  .continue-button:hover {
    @apply border;
    background: #172d44;
    color: beige;
- }
+  }
  .continue-button:hover span {
    @apply pr-4;
- }
+  }
  .continue-button:hover span:after {
     @apply opacity-100 right-0;
- }
+  }
 
- /* Social media things */
+  /* Social media things */
   .social {
     @apply mt-2 text-base w-5/12 mx-2;
     font-family: 'Caveat', cursive;
@@ -213,6 +217,77 @@
     }
   }
 
+  /* Animation Styling */
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes reset-position {
+    to {
+      transform: translate(0)
+    }
+  }
+
+  .capital.l {
+    transform: translate(400%, -100%);
+  }
+
+  .capital.j {
+    transform: translate(200%)
+  }
+
+  .capital.g {
+    transform: translate(-150%, 100%)
+  }
+
+  .capital {
+    animation: reset-position 0.75s ease 1s forwards;
+  }
+
+  .lower {
+    opacity: 0;
+    animation: appear 0.75s ease 1.5s forwards, reset-position 0.75s ease 1.5s forwards;
+    transform: translate(10px);
+  }
+
+  .loading-module {
+    transform: translate(0,-40%);
+    animation: reset-position 1s ease 2s forwards;
+  }
+
+  .avatar {
+    opacity: 0;
+    transform: translate(0,-20%);
+    animation: appear 0.75s ease 2s forwards, reset-position 2s ease 2s forwards;
+  }
+
+  .caption, .continue-button, .social {
+    opacity: 0;
+    transform: translate(0, -20%);
+  }
+
+  .c1 {
+    animation: appear 0.75s ease 2.5s forwards, reset-position 1s ease 2.5s forwards;
+  }
+
+  .c2 {
+    animation: appear 0.75s ease 3s forwards, reset-position 1s ease 3s forwards;
+  }
+
+  .continue-button {
+    animation: appear 0.75s ease 2.75s forwards, reset-position 1s ease 2.75s forwards;
+  }
+
+  .s1 {
+    animation: appear 0.75s ease 3.25s forwards, reset-position 1s ease 3.25s forwards;
+  }
+
+  .s2 {
+    animation: appear 0.75s ease 3.5s forwards, reset-position 1s ease 3.5s forwards;
+  }
 </style>
 
 <script>
