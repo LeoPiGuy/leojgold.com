@@ -1,4 +1,5 @@
 <template>
+  <p class="w-full h-full text-white pt-32"> Coming Soon!</p>
 </template>
 
 <style lang="postcss" scoped>

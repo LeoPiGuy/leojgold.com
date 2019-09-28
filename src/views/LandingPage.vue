@@ -26,16 +26,27 @@
         <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
         <div class="flex justify-center flex-wrap">
           <div class="social left s1">
-            <a href="https://github.com/LeoPiGuy" target="_blank"><font-awesome-icon :icon="['fab','github']"></font-awesome-icon> LeoPiGuy</a>
+            <a href="https://github.com/LeoPiGuy" target="_blank">
+              LeoPiGuy
+              <font-awesome-icon :icon="['fab','github']"></font-awesome-icon>
+            </a>
           </div>
           <div class="social right s1">
-            <a href="https://www.linkedin.com/in/leo-gold/" target="_blank"><font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon> Leo Gold</a>
+            <a href="https://www.linkedin.com/in/leo-gold/" target="_blank">
+              <font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon>
+              Leo Gold</a>
           </div>
           <div class="social left s2">
-            <a><font-awesome-icon :icon="['fab','discord']"></font-awesome-icon> LeoPi#7784</a>
+            <a>
+              LeoPi#7784
+              <font-awesome-icon :icon="['fab','discord']"></font-awesome-icon>
+            </a>
           </div>
           <div class="social right s2">
-            <a href="mailto:leopiguy@gmail.com" target="_blank"><font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon> leopiguy@gmail.com</a>
+            <a href="mailto:leopiguy@gmail.com" target="_blank">
+              <font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon>
+              leopiguy@gmail.com
+            </a>
           </div>
         </div>
       </div>
@@ -287,42 +298,10 @@
   .s2 {
     animation: appear 0.75s ease 3.5s forwards, reset-position 1s ease 3.5s forwards;
   }
-
-  /* Landing page exit transition */
-
-  .landing-page-leave-active {
-    transition: opacity 0.5s;
-  }
-
-  .landing-page-leave-to {
-    opacity: 0;
-  }
 </style>
 
 <script>
 module.exports = {
-  name: 'landing-page',
-  data: function () {
-    return {
-      stage1: false,
-      stage2: false,
-      stage3: false,
-      stage4: false,
-      stageEnd: false
-    }
-  },
-  methods: {
-    initAnimation: function () {
-      let vm = this
-      setTimeout(function () { vm.stage1 = true }, 1000)
-      setTimeout(function () { vm.stage2 = true }, 1500)
-      setTimeout(function () { vm.stage3 = true }, 2000)
-      setTimeout(function () { vm.stage4 = true }, 2000)
-      setTimeout(function () { vm.stageEnd = true }, 4000)
-    }
-  },
-  mounted () {
-    this.initAnimation()
-  }
+  name: 'landing-page'
 }
 </script>
