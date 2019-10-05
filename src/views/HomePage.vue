@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <p class="w-full h-full text-white pt-32"> Coming Soon!</p>
 </template>
+
+<style lang="postcss" scoped>
+
+</style>
 
 <script>
 // @ is an alias to /src
 
 export default {
-  name: 'home',
-  components: {
-  }
+  name: 'home'
 }
 </script>

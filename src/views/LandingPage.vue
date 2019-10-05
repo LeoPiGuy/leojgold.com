@@ -1,160 +1,307 @@
 <template>
-  <div :class="{'loading-background': true, stage1: stage1, stage2: stage2, stage3: stage3, stage4: stage4, stageEnd: stageEnd}">
-    <img class="avatar" src="../assets/myAvatar.svg"/>
-    <div class="loading-module">
-      <div class="name">
-        <h1 class="l-letter letter">L</h1><span class="appear">eo</span>
+  <transition name="landing-page">
+    <div class="landing-container">
+      <div class="w-full flex justify-center">
+        <img class="avatar" src="@/assets/myAvatar.svg"/>
       </div>
-      <div class="name">
-        <h1 class="j-letter letter">J</h1><span class="appear">acob</span>
+      <div class="loading-module flex justify-center pt-2">
+        <div class="name">
+          <p class="capital l">L</p>
+          <p class="lower">eo</p>
+        </div>
+        <div class="name">
+          <p class="capital j">J</p>
+          <p class="lower">acob</p>
+        </div>
+        <div class="name">
+          <p class="capital g">G</p>
+          <p class="lower">old</p>
+        </div>
       </div>
-      <div class="name">
-        <h1 class="g-letter letter">G</h1><span class="appear">old</span>
+      <div class="choices">
+        <p class="caption c1">I present you with some options. Choose wisely.</p>
+        <div class="flex justify-center">
+          <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
+        </div>
+        <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
+        <div class="flex justify-center flex-wrap">
+          <div class="social left s1">
+            <a href="https://github.com/LeoPiGuy" target="_blank">
+              LeoPiGuy
+              <font-awesome-icon :icon="['fab','github']"></font-awesome-icon>
+            </a>
+          </div>
+          <div class="social right s1">
+            <a href="https://www.linkedin.com/in/leo-gold/" target="_blank">
+              <font-awesome-icon :icon="['fab','linkedin']"></font-awesome-icon>
+              Leo Gold</a>
+          </div>
+          <div class="social left s2">
+            <a>
+              LeoPi#7784
+              <font-awesome-icon :icon="['fab','discord']"></font-awesome-icon>
+            </a>
+          </div>
+          <div class="social right s2">
+            <a href="mailto:leopiguy@gmail.com" target="_blank">
+              <font-awesome-icon :icon="['fas','envelope']"></font-awesome-icon>
+              leopiguy@gmail.com
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="selectors">
-    </div>
-  </div>
+  </transition>
 </template>
 
-<style scoped>
-  .loading-background {
-    background: black;
-    width: 100%;
-    height: 100%;
+<style lang="postcss" scoped>
+
+  /* Pre-animation */
+
+  .landing-container {
+    @apply w-full h-full;
+    @apply flex flex-col justify-center;
   }
+
+  /* Avatar things */
+  .avatar {
+    @apply relative block;
+    @apply border-gray-200 border-8 rounded-full;
+    @apply w-1/2;
+    height: 50vw;
+    /* margin-top: 10vh; */
+  }
+
+  @screen sm {
+    .avatar {
+      @apply w-1/3;
+      height: 33.33333vw;
+    }
+  }
+
+  @screen md {
+    .avatar {
+      @apply w-1/4;
+      height: 25vw;
+    }
+  }
+
+  @screen lg {
+    .avatar {
+      @apply w-1/5;
+      height: 20vw;
+    }
+  }
+
+  @screen xl {
+    .avatar {
+      @apply w-1/6;
+      height: 16.66666vw;
+    }
+  }
+
+  /* Name things */
 
   .name {
-    white-space:nowrap;
-    padding-left: 2vw;
-    background: transparent;
-  }
-
-  .name h1 {
-    display: inline-block;
-    margin: 0px;
-    color: beige;
+    @apply subpixel-antialiased tracking-wide whitespace-no-wrap pl-2;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 9vw;
   }
-  .name span {
-    display: inline-block;
-    color: grey;
-    font-size: 6vw;
-  }
-  .appear {
-    transition: opacity 2s, transform 2s;
-    opacity: 0;
-    transform: translate(10px,0);
+  .capital, .lower {
     display: inline-block;
   }
-  .stage2 .appear {
-    transform: translate(0,0);
-    opacity: 1;
+  .capital {
+    @apply text-5xl;
+    color: beige;
+  }
+  .lower {
+    @apply text-4xl;
+    @apply text-gray-400;
   }
 
-  .loading-module {
-    transition: transform 1s;
-    position: fixed;
-    display: flex;
-    text-align: left;
-    top: 50%;
-    left: 50%;
-    overflow: visible;
-    transform: translate(-50%, -50%)
+  @screen md {
+    .capital{
+      @apply text-6xl;
+    }
+    .lower {
+      @apply text-5xl;
+    }
   }
 
-  .l-letter {
-    transform: translate(400%, -100%)
+  @screen xl {
+    .capital{
+      font-size: 5.25rem;
+    }
+    .lower {
+      @apply text-6xl;
+    }
   }
-  .j-letter {
+
+  /* Choice things */
+
+  .caption {
+    @apply text-gray-200;
+    font-family: 'Fjalla One', sans-serif;
+  }
+
+  @screen md {
+    .caption{
+      @apply text-sm;
+    }
+  }
+
+  @screen xl {
+    .caption {
+      @apply text-2xl;
+    }
+  }
+  .continue-button {
+    @apply rounded-lg cursor-pointer py-1 px-2 m-4 text-2xl;
+    background: beige;
+    color: #172d44;
+    transition: all 0.4s;
+  }
+ .continue-button span {
+   @apply inline-block relative font-sans;
+   transition: all 0.4s;
+   transition-delay: padding 0.4s;
+  }
+ .continue-button span:after {
+    @apply absolute opacity-0 top-0;
+    content: '\00bb';
+    right: -20px;
+    transition: 0.5s;
+  }
+ .continue-button:hover {
+   @apply border;
+   background: #172d44;
+   color: beige;
+  }
+ .continue-button:hover span {
+   @apply pr-4;
+  }
+ .continue-button:hover span:after {
+    @apply opacity-100 right-0;
+  }
+
+  /* Social media things */
+  .social {
+    @apply mt-2 text-base w-5/12 mx-2;
+    font-family: 'Caveat', cursive;
+    color: beige;
+    transition: color 0.5s, font-size 0.5s;
+  }
+
+  .social:hover {
+    @apply text-blue-500;
+  }
+
+  .social.right {
+    @apply text-left;
+  }
+
+  .social.left {
+    @apply text-right;
+  }
+
+  @screen sm {
+    .social {
+      @apply text-lg;
+    }
+  }
+
+  @screen md {
+    .social {
+      @apply text-xl;
+    }
+  }
+
+  @screen lg {
+    .social {
+      @apply text-2xl
+    }
+  }
+
+  @screen xl {
+    .social {
+      @apply mt-4 mx-8 text-4xl;
+    }
+  }
+
+  /* Animation Styling */
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes reset-position {
+    to {
+      transform: translate(0)
+    }
+  }
+
+  .capital.l {
+    transform: translate(400%, -100%);
+  }
+
+  .capital.j {
     transform: translate(200%)
   }
-  .g-letter {
+
+  .capital.g {
     transform: translate(-150%, 100%)
   }
 
-  .letter {
-    transition: transform 1s;
+  .capital {
+    animation: reset-position 0.75s ease 1s forwards;
   }
 
-  .stage1 .letter {
-    transform: translate(0)
+  .lower {
+    opacity: 0;
+    animation: appear 0.75s ease 1.5s forwards, reset-position 0.75s ease 1.5s forwards;
+    transform: translate(10px);
   }
-  .stage3 .loading-module {
-    transform: translate(-50%, 40%)
+
+  .loading-module {
+    transform: translate(0,-40%);
+    animation: reset-position 1s ease 2s forwards;
   }
 
   .avatar {
-    transition: opacity 1s, transform 2s;
-    position: fixed;
-    width: 20%;
-    display: fixed;
-    border: thick solid grey;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -120%);
     opacity: 0;
-  }
-  .stage4 .avatar {
-    transform: translate(-50%, -90%);
-    opacity: 1;
+    transform: translate(0,-20%);
+    animation: appear 0.75s ease 2s forwards, reset-position 2s ease 2s forwards;
   }
 
-  @keyframes avatar-bounce {
-    0% {
-        transform: translate(-50%, -90%);
-    }
-    50% {
-        transform: translate(-50%, -95%);
-    }
-    100% {
-        transform: translate(-50%, -90%);
-    }
-  }
-  .stageEnd .avatar {
-    animation: avatar-bounce 3s infinite;
-    animation-timing-function: linear;
+  .caption, .continue-button, .social {
+    opacity: 0;
+    transform: translate(0, -20%);
   }
 
-  .selectors p {
-    margin: 0;
-    color: whitesmoke;
+  .c1 {
+    animation: appear 0.75s ease 2.5s forwards, reset-position 1s ease 2.5s forwards;
   }
 
-  .selectors {
-    display: inline-block;
-    position: relative;;
-    top: 30vw;
+  .c2 {
+    animation: appear 0.75s ease 3s forwards, reset-position 1s ease 3s forwards;
+  }
+
+  .continue-button {
+    animation: appear 0.75s ease 2.75s forwards, reset-position 1s ease 2.75s forwards;
+  }
+
+  .s1 {
+    animation: appear 0.75s ease 3.25s forwards, reset-position 1s ease 3.25s forwards;
+  }
+
+  .s2 {
+    animation: appear 0.75s ease 3.5s forwards, reset-position 1s ease 3.5s forwards;
   }
 </style>
 
 <script>
 module.exports = {
-  name: 'landing-page',
-  components: {},
-  data: function () {
-    return {
-      stage1: false,
-      stage2: false,
-      stage3: false,
-      stage4: false,
-      stageEnd: false
-    }
-  },
-  methods: {
-    initAnimation: function () {
-      let vm = this
-      setTimeout(function () { vm.stage1 = true }, 1000)
-      setTimeout(function () { vm.stage2 = true }, 1500)
-      setTimeout(function () { vm.stage3 = true }, 2000)
-      setTimeout(function () { vm.stage4 = true }, 2000)
-      setTimeout(function () { vm.stageEnd = true }, 4000)
-    }
-  },
-  mounted () {
-    this.initAnimation()
-  }
+  name: 'landing-page'
 }
 </script>
