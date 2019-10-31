@@ -1,29 +1,8 @@
-# leo-website
+# leogold.dev
 
-## Project setup
-```
-npm install
-```
+This is my portfolio website and is currently under development. I am using the following technologies:
+- VueJS for routing and serving
+- TailwindCSS for styling and responsive design
+- PostCSS for applying Tailwind classes
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Currently my landing page is finsihed, and am working on developing the rest of the site before 2020.
