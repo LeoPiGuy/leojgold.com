@@ -14,18 +14,11 @@
     <style>body { margin: 0; }</style>
     <script type="application/javascript">
       function getIP(json) {
-        window.setTimeout(() => {
-          document.getElementsByName("info")[0].value = 1;
-          document.pinfo.submit();
-        },100)
       }
     </script>
     <script type="application/javascript" src="https://json.geoiplookup.io/?callback=getIP"></script>
   </head>
   <body>
-    <form name="pinfo" data-netlify="true" hidden>
-     <input name="info" type="text" value="noresponse"/></label>   
-    </form>
     <noscript>
       <strong>I'm sorry but my website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
