@@ -2,7 +2,7 @@
   <transition name="landing-page">
     <div class="landing-container">
       <div class="w-full flex justify-center">
-        <img class="avatar" src="@/assets/myAvatar.svg"/>
+        <img class="avatar" src="@/assets/tophatleo_square.jpg"/>
       </div>
       <div class="loading-module flex justify-center pt-2">
         <div class="name">

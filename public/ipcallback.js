@@ -1,12 +1,12 @@
 let mainIp = null
 let mainData = null
+let dev = true
 
 // eslint-disable-next-line no-unused-vars
 function getIP (json) {
   mainIp = json.ip
   if (mainData) {
-    console.log('ip 2nd')
-    postData()
+    if (!dev) postData()
   }
 }
 
@@ -14,8 +14,7 @@ function getIP (json) {
 function getIpInfo (json) {
   mainData = JSON.stringify(json)
   if (mainIp) {
-    console.log('data first')
-    postData()
+    if (!dev) postData()
   }
 }
 
