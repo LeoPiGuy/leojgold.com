@@ -21,7 +21,8 @@
       <div class="choices">
         <p class="caption c1">I present you with some options. Choose wisely.</p>
         <div class="flex justify-center">
-          <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
+          <a class="continue-button" href="https://www.linkedin.com/in/leo-gold/"><span>Continue to My Website</span></a>
+          <!-- <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link> -->
         </div>
         <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
         <div class="flex justify-center flex-wrap">

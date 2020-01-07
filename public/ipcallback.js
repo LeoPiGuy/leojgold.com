@@ -12,6 +12,9 @@ function getIP (json) {
 
 // eslint-disable-next-line no-unused-vars
 function getIpInfo (json) {
+  var d = new Date()
+  time = d.toTimeString();
+  json["time"] = time;
   mainData = JSON.stringify(json)
   if (mainIp) {
     console.log('data first')
