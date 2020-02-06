@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 60 60" xml:space="preserve" data-animoptions="{'duration':'2', 'repeat':'0', 'repeatDelay':'0.7'}" preserveAspectRatio="xMinYMin meet" style="left: 0.5px; top: 0px;"><g class="lievo-setrotation"><g class="lievo-setsharp"><g class="lievo-setflip"><g class="lievo-main">
+		<g class="lievo-common">
+			<g data-svg-origin="22.999879108895076 37.00036467373637" style="transform: matrix(1, 0, 0, 1, -0.00015482, -0.000137857); transform-origin: 0px 0px 0px;">
+				<polyline fill="#EAB897" stroke="#D4A281" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="41.53,22.72 13.24,51 9,46.76 37.28,18.47" style="stroke: rgb(212, 162, 129); fill: rgb(234, 184, 151);"></polyline>
+				<path class="lievo-altstroke" fill="#4C5A69" stroke="#1C2A39" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M50.01,25.54l-2.83,2.83L33.75,14.94l-1.93-6.8c-0.11-0.54,0.24-0.89,0.78-0.78l6.8,1.92l13.44,13.44L50.01,25.54z" style="stroke: rgb(28, 42, 57); fill: rgb(76, 90, 105);"></path>
+			</g>
+			<defs>
+				<clipPath id="livicon_hammer_41">
+					<rect class="lievo-donotdraw lievo-nohovercolor lievo-nohoverstroke" x="43" y="21" width="16" height="31"></rect>
+				</clipPath>
+			</defs>
+			<g clip-path="url(#livicon_hammer_41)">
+				<path fill="none" stroke="#455556" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M51,33v18 M49,33h4" opacity="0" style="opacity: 0; stroke: rgb(69, 85, 86); transform: matrix(1, 0, 0, 1, 0, 0);" data-svg-origin="49 33"></path>
+			</g>
+		</g>
+	<rect x="-19" y="-19" width="4" height="4" fill="none" stroke="#ffffff" style="stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; opacity: 0;" class="lievo-checkshift lievo-donotdraw lievo-nohoverstroke lievo-nohovercolor"></rect></g></g></g></g>
+</svg>
