@@ -38,7 +38,7 @@
           </div>
           <div class="social left s2">
             <a>
-              LeoPi#7784
+              LeoPi#6245
               <font-awesome-icon :icon="['fab','discord']"></font-awesome-icon>
             </a>
           </div>
