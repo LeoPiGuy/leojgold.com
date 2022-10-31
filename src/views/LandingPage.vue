@@ -21,7 +21,7 @@
       <div class="choices">
         <p class="caption c1">You can either</p>
         <div class="flex justify-center">
-          <router-link class="continue-button" to="/home"><span>Continue to My Website</span></router-link>
+          <router-link class="continue-button" to="/home"><span>Learn more about me!</span></router-link>
         </div>
         <p class="text-gray-400 caption c2">or you can visit / contact me at any of the sites listed below:</p>
         <div class="flex justify-center flex-wrap">

@@ -20,11 +20,12 @@
       </div>
     </div>
     <div class="w-full flex justify-center">
+      <p class="second-caption">I am working on a new concept for this site.</p>
       <p class="second-caption">For now you can:</p>
     </div>
     <div class="flex justify-center flex-wrap">
       <div class="option o1">
-        <a href="/resume.pdf">
+        <a href="resume.leopiguy.com">
           <font-awesome-icon class="youtube" :icon="['fas','file']"></font-awesome-icon>
           View my resume
         </a>

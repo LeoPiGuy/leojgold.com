@@ -13,7 +13,7 @@ module.exports = {
   name: 'MainFooter',
   data: function () {
     return {
-      date: 2021
+      date: 2022
     }
   }
 }
